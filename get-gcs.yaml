@@ -1,5 +1,6 @@
 steps:
   - label: Hello World!
+    parallelism: 4
     agents:
       queue: foo-bar-k8s
     plugins:
