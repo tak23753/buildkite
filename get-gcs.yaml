@@ -1,6 +1,5 @@
 steps:
   - label: Hello World!
-    command: echo Hello World!
     agents:
       queue: foo-bar-k8s
     plugins:
@@ -8,3 +7,10 @@ steps:
           gitEnvFrom:
             - secretRef:
                 name: buildkite-agent-stack-ssh-secret
+          podSpec:
+            serviceAccountName: buildkite
+            containers:
+              - image: google/cloud-sdk:latest
+                command: [sh, -c]
+                args:
+                  - "'gcloud storage ls'"
