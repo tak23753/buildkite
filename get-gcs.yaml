@@ -3,3 +3,8 @@ steps:
     command: echo Hello World!
     agents:
       queue: kubernetes
+    plugins:
+      - kubernetes:
+          gitEnvFrom:
+            - secretRef:
+                name: buildkite-agent-stack-ssh-secret
