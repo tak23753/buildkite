@@ -1,6 +1,5 @@
 steps:
   - label: Hello World!
-    parallelism: 4
     agents:
       queue: foo-bar-k8s
     plugins:
@@ -11,7 +10,8 @@ steps:
           podSpec:
             serviceAccountName: buildkite
             containers:
-              - image: google/cloud-sdk:latest
-                command: [sh, -c]
+              # - image: google/cloud-sdk:latest
+              - command: [sh, -c]
                 args:
-                  - "'gcloud storage ls'"
+                  - "'echo hello'"
+                  # - "'gcloud storage ls'"
