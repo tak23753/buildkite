@@ -11,8 +11,8 @@ steps:
           podSpec:
             serviceAccountName: buildkite
             containers:
-              - image: google/cloud-sdk:latest
-                command: [sh, -c]
+              # - image: google/cloud-sdk:latest
+              - command: [sh, -c]
                 args:
                   - "'echo hello'"
                   # - "'gcloud storage ls'"
